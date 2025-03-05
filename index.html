@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background Video Page</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            height: 100vh;
+            overflow: hidden;
+            position: relative;
+            color: white;
+        }
+
+        /* Video background container */
+        .video-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        /* Video element styling */
+        .video-background video {
+            position: absolute;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            object-fit: cover;
+        }
+
+        /* Overlay to make content more visible */
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            /* Semi-transparent black overlay */
+            z-index: -1;
+        }
+
+        /* Content container */
+        .content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: #ffffff;
+            color: #333333;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #f0f0f0;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Animated text cursor effect */
+        #animated-name,
+        #animated-title {
+            position: relative;
+            min-height: 1.2em;
+        }
+
+        #animated-name::after,
+        #animated-title::after {
+            content: "|";
+            position: absolute;
+            right: -8px;
+            animation: blink 0.7s infinite;
+        }
+
+        #animated-title::after {
+            animation-delay: 0.5s;
+        }
+
+        @keyframes blink {
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0;
+            }
+        }
+
+        /* Mouse follower effect */
+        .mouse-follower {
+            position: fixed;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            pointer-events: none;
+            transform: translate(-50%, -50%);
+            transition: transform 0.1s ease, width 0.3s ease, height 0.3s ease, background 0.3s ease;
+            z-index: 9999;
+            backdrop-filter: blur(2px);
+            -webkit-backdrop-filter: blur(2px);
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+        }
+
+        .mouse-follower.active {
+            width: 60px;
+            height: 60px;
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        /* Profile image styling */
+        .profile-image-container {
+            margin-bottom: 1.5rem;
+        }
+
+        .profile-image {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid white;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Mouse follower element -->
+    <div class="mouse-follower"></div>
+
+    <!-- Video Background -->
+    <div class="video-background">
+        <video autoplay muted loop playsinline>
+            <source src="video.mp4" type="video/mp4">
+            Your browser does not support HTML5 video.
+        </video>
+    </div>
+
+    <!-- Semi-transparent overlay -->
+    <div class="overlay"></div>
+
+    <!-- Page Content -->
+    <div class="content">
+        <div class="profile-image-container">
+            <img src="portrait.jpeg" alt="Gauri Doiphode" class="profile-image">
+        </div>
+        <h1 id="animated-name"></h1>
+        <p id="animated-title"></p>
+        <a href="content.html" class="btn">View My Portfolio</a>
+    </div>
+
+    <script>
+        // Ensure video plays properly on different browsers and devices
+        document.addEventListener('DOMContentLoaded', function () {
+            const video = document.querySelector('video');
+
+            // Handle video loading issues
+            video.addEventListener('error', function () {
+                console.error('Error loading video');
+                // Fallback to a background color if video fails to load
+                document.querySelector('.video-background').style.backgroundColor = '#333';
+            });
+
+            // Force play on some mobile devices that might ignore autoplay
+            video.play().catch(function (error) {
+                console.log('Autoplay prevented:', error);
+                // You might want to add a play button here for mobile devices
+            });
+
+            // Animated typing effect
+            const nameElement = document.getElementById('animated-name');
+            const titleElement = document.getElementById('animated-title');
+
+            // Function to create typing animation
+            function typeWriter(element, text, speed, delay, callback) {
+                let i = 0;
+
+                // Wait before starting animation
+                setTimeout(function () {
+                    // Clear any existing content
+                    element.textContent = '';
+
+                    // Start typing animation
+                    function type() {
+                        if (i < text.length) {
+                            element.textContent += text.charAt(i);
+                            i++;
+                            setTimeout(type, speed);
+                        } else if (callback) {
+                            // Call the callback function when typing is complete
+                            callback();
+                        }
+                    }
+
+                    type();
+                }, delay);
+            }
+
+            // Start animations in sequence
+            typeWriter(nameElement, 'Gauri Doiphode', 100, 500, function () {
+                typeWriter(titleElement, 'Data Science & Information Systems Specialist', 50, 300);
+            });
+
+            // Mouse follower effect
+            const mouseFollower = document.querySelector('.mouse-follower');
+
+            // Update follower position
+            document.addEventListener('mousemove', function (e) {
+                mouseFollower.style.left = e.clientX + 'px';
+                mouseFollower.style.top = e.clientY + 'px';
+            });
+
+            // Add interactive effects on hover over interactive elements
+            const interactiveElements = document.querySelectorAll('a, button, .btn');
+
+            interactiveElements.forEach(element => {
+                element.addEventListener('mouseenter', function () {
+                    mouseFollower.classList.add('active');
+                });
+
+                element.addEventListener('mouseleave', function () {
+                    mouseFollower.classList.remove('active');
+                });
+            });
+
+            // Hide mouse follower when mouse leaves the window
+            document.addEventListener('mouseleave', function () {
+                mouseFollower.style.opacity = '0';
+            });
+
+            // Show mouse follower when mouse enters the window
+            document.addEventListener('mouseenter', function () {
+                mouseFollower.style.opacity = '1';
+            });
+        });
+    </script>
+</body>
+
+</html>
