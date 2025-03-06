@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -69,9 +70,11 @@
             0% {
                 background-position: 0% 50%;
             }
+
             50% {
                 background-position: 100% 50%;
             }
+
             100% {
                 background-position: 0% 50%;
             }
@@ -184,9 +187,11 @@
             0% {
                 background-position: 0% 50%;
             }
+
             50% {
                 background-position: 100% 50%;
             }
+
             100% {
                 background-position: 0% 50%;
             }
@@ -525,9 +530,11 @@
             0% {
                 background-position: 0% 50%;
             }
+
             50% {
                 background-position: 100% 50%;
             }
+
             100% {
                 background-position: 0% 50%;
             }
@@ -627,7 +634,8 @@
             width: 24px;
         }
 
-        .sun, .moon {
+        .sun,
+        .moon {
             width: 16px;
             height: 16px;
             position: absolute;
@@ -646,19 +654,19 @@
             opacity: 0;
         }
 
-        input:checked + .slider {
+        input:checked+.slider {
             background-color: rgba(0, 0, 0, 0.4);
         }
 
-        input:checked + .slider:before {
+        input:checked+.slider:before {
             transform: translateX(26px);
         }
 
-        input:checked + .slider .sun {
+        input:checked+.slider .sun {
             opacity: 0;
         }
 
-        input:checked + .slider .moon {
+        input:checked+.slider .moon {
             opacity: 1;
         }
 
@@ -750,13 +758,14 @@
         }
     </style>
 </head>
+
 <body>
     <header>
         <div class="gradient-background"></div>
         <div class="container">
             <a href="index.html" class="back-home">
                 <svg class="back-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/>
+                    <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z" />
                 </svg>
                 Back to Home
             </a>
@@ -767,10 +776,12 @@
                     <input type="checkbox" id="checkbox" />
                     <div class="slider round">
                         <svg class="sun" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12 17a5 5 0 1 0 0-10 5 5 0 0 0 0 10zm0 2a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm0-15a1 1 0 0 1 1 1v1a1 1 0 1 1-2 0V5a1 1 0 0 1 1-1zm0 15a1 1 0 0 1 1 1v1a1 1 0 1 1-2 0v-1a1 1 0 0 1 1-1zM5 12a1 1 0 0 1 1-1h1a1 1 0 1 1 0 2H6a1 1 0 0 1-1-1zm15 0a1 1 0 0 1-1 1h-1a1 1 0 1 1 0-2h1a1 1 0 0 1 1 1zm-2.7-7.7a1 1 0 0 1 0 1.4l-.7.7a1 1 0 1 1-1.4-1.4l.7-.7a1 1 0 0 1 1.4 0zm-8.6 8.6a1 1 0 0 1 0 1.4l-.7.7a1 1 0 1 1-1.4-1.4l.7-.7a1 1 0 0 1 1.4 0zm11.4 0a1 1 0 0 1-1.4 1.4l-.7-.7a1 1 0 0 1 1.4-1.4l.7.7zM6.3 6.3a1 1 0 0 1-1.4 0l-.7-.7a1 1 0 0 1 1.4-1.4l.7.7a1 1 0 0 1 0 1.4z"/>
+                            <path
+                                d="M12 17a5 5 0 1 0 0-10 5 5 0 0 0 0 10zm0 2a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm0-15a1 1 0 0 1 1 1v1a1 1 0 1 1-2 0V5a1 1 0 0 1 1-1zm0 15a1 1 0 0 1 1 1v1a1 1 0 1 1-2 0v-1a1 1 0 0 1 1-1zM5 12a1 1 0 0 1 1-1h1a1 1 0 1 1 0 2H6a1 1 0 0 1-1-1zm15 0a1 1 0 0 1-1 1h-1a1 1 0 1 1 0-2h1a1 1 0 0 1 1 1zm-2.7-7.7a1 1 0 0 1 0 1.4l-.7.7a1 1 0 1 1-1.4-1.4l.7-.7a1 1 0 0 1 1.4 0zm-8.6 8.6a1 1 0 0 1 0 1.4l-.7.7a1 1 0 1 1-1.4-1.4l.7-.7a1 1 0 0 1 1.4 0zm11.4 0a1 1 0 0 1-1.4 1.4l-.7-.7a1 1 0 0 1 1.4-1.4l.7.7zM6.3 6.3a1 1 0 0 1-1.4 0l-.7-.7a1 1 0 0 1 1.4-1.4l.7.7a1 1 0 0 1 0 1.4z" />
                         </svg>
                         <svg class="moon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12 3a9 9 0 1 0 9 9c0-.46-.04-.92-.1-1.36a5.389 5.389 0 0 1-4.4 2.26 5.403 5.403 0 0 1-3.14-9.8c-.44-.06-.9-.1-1.36-.1z"/>
+                            <path
+                                d="M12 3a9 9 0 1 0 9 9c0-.46-.04-.92-.1-1.36a5.389 5.389 0 0 1-4.4 2.26 5.403 5.403 0 0 1-3.14-9.8c-.44-.06-.9-.1-1.36-.1z" />
                         </svg>
                     </div>
                 </label>
@@ -784,21 +795,18 @@
                 <div class="contact-info">
                     <div class="contact-item">
                         <svg class="contact-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                            <path
+                                d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
                         </svg>
                         <span>Seattle, Washington</span>
                     </div>
                     <div class="contact-item">
                         <svg class="contact-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                            <path
+                                d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
                         </svg>
-                        <a href="mailto:gauridoiphode@outlook.com" style="color: white; text-decoration: none;">gauridoiphode@outlook.com</a>
-                    </div>
-                    <div class="contact-item">
-                        <svg class="contact-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
-                        </svg>
-                        <span>206-602-9953</span>
+                        <a href="mailto:gauridoiphode@outlook.com"
+                            style="color: white; text-decoration: none;">gauridoiphode@outlook.com</a>
                     </div>
                 </div>
             </div>
@@ -806,9 +814,11 @@
     </header>
 
     <main class="container">
-        <p class="summary">
-            Pursuing Master's in Information Systems with a background in Commerce and Law. Skilled in data analysis, predictive modeling, and database design with expertise in Python, SQL, and Excel.
-        </p>
+        <section id="professional-profile">
+            <h2 class="section-title">Professional Profile</h2>
+            <p>Pursuing Master's in Information Systems with a background in Commerce and Law. Skilled in data analysis,
+                predictive modeling, and database design with expertise in Python, SQL, and Excel.</p>
+        </section>
 
         <section id="education">
             <h2 class="section-title">Education</h2>
@@ -820,9 +830,12 @@
                         <h3 class="timeline-title">Master of Science in Information Systems</h3>
                         <div class="timeline-details">
                             <ul>
-                                <li>Utilized statistical and data analysis techniques for real-world business problems using Python and data science libraries (numpy, pandas, matplotlib, sklearn)</li>
-                                <li>Implemented mathematical modeling and analysis using Excel tools (Solver, TreePlan, CrystalBall)</li>
-                                <li>Acquired expertise in database design, data modeling, and SQL (MySQL) for cleaning data and generating insights</li>
+                                <li>Utilized statistical and data analysis techniques for real-world business problems
+                                    using Python and data science libraries (numpy, pandas, matplotlib, sklearn)</li>
+                                <li>Implemented mathematical modeling and analysis using Excel tools (Solver, TreePlan,
+                                    CrystalBall)</li>
+                                <li>Acquired expertise in database design, data modeling, and SQL (MySQL) for cleaning
+                                    data and generating insights</li>
                             </ul>
                         </div>
                     </div>
@@ -835,7 +848,9 @@
                         <div class="timeline-subtitle">University of Mumbai</div>
                         <div class="timeline-details">
                             <ul>
-                                <li>Developed strong foundation in Business economics, Communication, Financial Management, Marketing, Human Resource Management, Contract Law, Financial Accounting, and Costing</li>
+                                <li>Developed strong foundation in Business economics, Communication, Financial
+                                    Management, Marketing, Human Resource Management, Contract Law, Financial
+                                    Accounting, and Costing</li>
                             </ul>
                         </div>
                     </div>
@@ -870,8 +885,9 @@
                     </video>
                 </div>
                 <p class="featured-project-description">
-                    Developed a predictive model to estimate house prices in King County using a dataset of 21,613 properties. 
-                    Conducted data cleaning, exploratory analysis, and feature engineering to identify key predictors. 
+                    Developed a predictive model to estimate house prices in King County using a dataset of 21,613
+                    properties.
+                    Conducted data cleaning, exploratory analysis, and feature engineering to identify key predictors.
                     Built and evaluated models including linear regression and random forest, achieving an R² of 88.2%.
                 </p>
                 <div class="project-tags">
@@ -892,7 +908,10 @@
                                 Your browser does not support the video tag.
                             </video>
                         </div>
-                        <p>Analyzed shopping data from a clean, joined dataset of 3,900 rows to uncover spending patterns and customer behaviors. Identified key insights on product popularity, order frequency, and regional trends. Utilized SQL techniques like window functions, aggregate functions, and partitioning.</p>
+                        <p>Analyzed shopping data from a clean, joined dataset of 3,900 rows to uncover spending
+                            patterns and customer behaviors. Identified key insights on product popularity, order
+                            frequency, and regional trends. Utilized SQL techniques like window functions, aggregate
+                            functions, and partitioning.</p>
                         <div class="project-tags">
                             <span class="project-tag">SQL</span>
                             <span class="project-tag">Data Analysis</span>
@@ -909,7 +928,9 @@
                                 Your browser does not support the video tag.
                             </video>
                         </div>
-                        <p>Developed a CNN-based model using TensorFlow to classify skin cancer images. Applied data preprocessing, augmentation, and model evaluation to improve accuracy. Achieved high performance in distinguishing skin cancer types using deep learning techniques.</p>
+                        <p>Developed a CNN-based model using TensorFlow to classify skin cancer images. Applied data
+                            preprocessing, augmentation, and model evaluation to improve accuracy. Achieved high
+                            performance in distinguishing skin cancer types using deep learning techniques.</p>
                         <div class="project-tags">
                             <span class="project-tag">TensorFlow</span>
                             <span class="project-tag">Deep Learning</span>
@@ -954,7 +975,8 @@
                 </div>
                 <div class="certifications">
                     <h3 class="skills-category-title">Certifications</h3>
-                    <div class="certification-item">Excel Spreadsheet Software Course by UW Foster School of Business</div>
+                    <div class="certification-item">Excel Spreadsheet Software Course by UW Foster School of Business
+                    </div>
                     <div class="certification-item">Programming in Python by Meta</div>
                 </div>
             </div>
@@ -975,10 +997,10 @@
     </footer>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             // Add smooth scrolling
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function(e) {
+                anchor.addEventListener('click', function (e) {
                     e.preventDefault();
                     document.querySelector(this.getAttribute('href')).scrollIntoView({
                         behavior: 'smooth'
@@ -994,7 +1016,7 @@
                 const content = item.querySelector('.timeline-content');
 
                 // Toggle active class on click
-                dot.addEventListener('click', function() {
+                dot.addEventListener('click', function () {
                     // If already active, just close it
                     if (item.classList.contains('active')) {
                         item.classList.remove('active');
@@ -1011,7 +1033,7 @@
                 });
 
                 // Also allow clicking anywhere on the content
-                content.addEventListener('click', function() {
+                content.addEventListener('click', function () {
                     dot.click(); // Trigger the dot click event
                 });
             });
@@ -1023,11 +1045,11 @@
             const projectCards = document.querySelectorAll('.project-card');
 
             projectCards.forEach(card => {
-                card.addEventListener('mouseenter', function() {
+                card.addEventListener('mouseenter', function () {
                     this.style.zIndex = '10';
                 });
 
-                card.addEventListener('mouseleave', function() {
+                card.addEventListener('mouseleave', function () {
                     this.style.zIndex = '1';
                 });
             });
@@ -1043,7 +1065,7 @@
                 } else {
                     document.body.classList.remove('dark-theme');
                     localStorage.setItem('theme', 'light');
-                }    
+                }
             }
 
             // Event listener for toggle switch
@@ -1067,4 +1089,5 @@
         });
     </script>
 </body>
+
 </html>
